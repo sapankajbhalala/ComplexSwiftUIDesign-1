@@ -14,6 +14,7 @@
 		B046993E242DCD66007C06A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B046993D242DCD66007C06A7 /* Preview Assets.xcassets */; };
 		B0469941242DCD66007C06A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B046993F242DCD66007C06A7 /* LaunchScreen.storyboard */; };
 		B0469949242DD28C007C06A7 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0469948242DD28C007C06A7 /* HomeList.swift */; };
+		B0A956432432245000CF5E0F /* Geners.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A956422432245000CF5E0F /* Geners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B0469940242DCD66007C06A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0469942242DCD66007C06A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0469948242DD28C007C06A7 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
+		B0A956422432245000CF5E0F /* Geners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				B0469936242DCD63007C06A7 /* SceneDelegate.swift */,
 				B0469938242DCD63007C06A7 /* ContentView.swift */,
 				B0469948242DD28C007C06A7 /* HomeList.swift */,
+				B0A956422432245000CF5E0F /* Geners.swift */,
 				B046993A242DCD66007C06A7 /* Assets.xcassets */,
 				B046993F242DCD66007C06A7 /* LaunchScreen.storyboard */,
 				B0469942242DCD66007C06A7 /* Info.plist */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0469935242DCD63007C06A7 /* AppDelegate.swift in Sources */,
+				B0A956432432245000CF5E0F /* Geners.swift in Sources */,
 				B0469937242DCD63007C06A7 /* SceneDelegate.swift in Sources */,
 				B0469949242DD28C007C06A7 /* HomeList.swift in Sources */,
 				B0469939242DCD63007C06A7 /* ContentView.swift in Sources */,

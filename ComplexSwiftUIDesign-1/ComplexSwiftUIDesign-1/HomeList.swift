@@ -50,6 +50,7 @@ struct HomeList: View {
                .padding(.bottom, 70)
                Spacer()
             }
+            GenersView()
          }
          .padding(.top, 78)
       }
@@ -63,6 +64,28 @@ struct HomeList_Previews: PreviewProvider {
    }
 }
 #endif
+
+struct SingleGenerView: View {
+
+   var title = "Toy Story"
+   var image = "Toy Story"
+   var color = Color("background3")
+   var shadowColor = Color("backgroundShadow3")
+
+   var body: some View {
+      return VStack(alignment: .leading) {
+        Text(title)
+            .font(.headline)
+            .fontWeight(.medium)
+           .foregroundColor(.white)
+            .lineLimit(4)
+            .frame(width: 100, height: 100)
+            .shadow(color: shadowColor, radius: 4, x: 1, y: 1)
+      }
+      .background(color)
+      .cornerRadius(10)
+   }
+}
 
 struct MovieView: View {
 
@@ -79,7 +102,8 @@ struct MovieView: View {
                         .resizable()
                         .renderingMode(.original)
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 246, height: 360)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+//                        .frame(width: 246, height: 360)
             Text(title)
                .font(.title)
                .fontWeight(.bold)
@@ -92,7 +116,8 @@ struct MovieView: View {
       }
       .background(color)
       .cornerRadius(30)
-      .frame(width: 246, height: 360)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+//      .frame(width: 246, height: 360)
       .shadow(color: shadowColor, radius: 20, x: 0, y: 20)
    }
 }
@@ -126,4 +151,35 @@ let coursesData = [
           image: "The American President",
           color: Color("background9"),
           shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
+]
+
+struct Gener: Identifiable {
+   var id = UUID()
+   var title: String
+   var color: Color
+   var shadowColor: Color
+}
+
+let generData = [
+   Gener(title: "Action",
+          color: Color("Action"),
+          shadowColor: Color("backgroundShadow3")),
+   Gener(title: "Adventure",
+          color: Color("Adventure"),
+          shadowColor: Color("backgroundShadow4")),
+   Gener(title: "Comedy",
+          color: Color("Comedy"),
+          shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
+   Gener(title: "Crime",
+          color: Color("Crime"),
+          shadowColor: Color("backgroundShadow4")),
+   Gener(title: "Drama",
+          color: Color("Drama"),
+          shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
+   Gener(title: "Fantasy",
+         color: Color("Fantasy"),
+         shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
+   Gener(title: "Historical",
+       color: Color("Historical"),
+       shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
 ]
