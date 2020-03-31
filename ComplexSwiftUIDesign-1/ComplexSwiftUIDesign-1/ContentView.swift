@@ -14,7 +14,6 @@ let screen = UIScreen.main.bounds
 struct ContentView: View {
     @State var show = false
     @State var showProfile = false
-
     var body: some View {
        ZStack(alignment: .top) {
           HomeList()
@@ -24,6 +23,7 @@ struct ContentView: View {
        }
        .background(Color("background"))
        .edgesIgnoringSafeArea(.all)
+       .navigationBarBackButtonHidden(true)
     }
 }
 

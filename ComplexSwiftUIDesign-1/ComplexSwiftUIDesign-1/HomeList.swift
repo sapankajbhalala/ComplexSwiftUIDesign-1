@@ -29,6 +29,7 @@ struct HomeList: View {
                Spacer()
             }
             .padding(.leading, 60.0)
+            .padding(.top, 60.0)
 
             ScrollView(.horizontal, showsIndicators: false) {
                HStack(spacing: 30.0) {
@@ -50,6 +51,7 @@ struct HomeList: View {
                   }
                }
                .padding(.leading, 30)
+                .padding(.trailing, 30)
                .padding(.top, 10)
                .padding(.bottom, 40)
                Spacer()
