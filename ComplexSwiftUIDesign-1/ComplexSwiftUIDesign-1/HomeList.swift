@@ -12,7 +12,8 @@ struct HomeList: View {
 
    var courses = coursesData
    @State var showDetail = false
-
+    @State var selectMovie = Movie()
+    
    var body: some View {
       ScrollView {
          VStack {
@@ -32,7 +33,9 @@ struct HomeList: View {
             ScrollView(.horizontal, showsIndicators: false) {
                HStack(spacing: 30.0) {
                   ForEach(courses) { item in
-                     Button(action: { self.showDetail.toggle() }) {
+                     Button(action: {
+                        self.selectMovie = item
+                        self.showDetail.toggle() }) {
                         GeometryReader { geometry in
                            MovieView(title: item.title,
                                       image: item.image,
@@ -40,19 +43,19 @@ struct HomeList: View {
                                       shadowColor: item.shadowColor)
                               .rotation3DEffect(Angle(degrees:
                                  Double(geometry.frame(in: .global).minX - 20) / -40), axis: (x: 0, y: 20.0, z: 0))
+                            .sheet(isPresented: self.$showDetail) { DetailView(show: true, item: self.selectMovie) }
                         }
                         .frame(width: 246, height: 360)
                      }
                   }
                }
                .padding(.leading, 30)
-               .padding(.top, 30)
-               .padding(.bottom, 70)
+               .padding(.top, 10)
+               .padding(.bottom, 40)
                Spacer()
             }
             GenersView()
          }
-         .padding(.top, 78)
       }
    }
 }
@@ -118,16 +121,16 @@ struct MovieView: View {
       .cornerRadius(30)
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
 //      .frame(width: 246, height: 360)
-      .shadow(color: shadowColor, radius: 20, x: 0, y: 20)
+      .shadow(color: shadowColor, radius: 20, x: 0, y: 10)
    }
 }
 
 struct Movie: Identifiable {
    var id = UUID()
-   var title: String
-   var image: String
-   var color: Color
-   var shadowColor: Color
+   var title: String = ""
+   var image: String = ""
+    var color: Color = .clear
+    var shadowColor: Color = .clear
 }
 
 let coursesData = [
