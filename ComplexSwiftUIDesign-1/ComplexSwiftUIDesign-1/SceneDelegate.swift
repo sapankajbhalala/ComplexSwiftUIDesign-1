@@ -8,6 +8,15 @@
 
 import UIKit
 import SwiftUI
+class UserSettings: ObservableObject {
+    
+    @Published var loggedIn : Bool = false
+}
+
+class UserOnboard: ObservableObject {
+    
+    @Published var onboardComplete : Bool = false
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,12 +29,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = OnboardingView()
+        let contentView = StartOnboardView()
+        let onboard = UserOnboard()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(onboard))
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -60,5 +70,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+struct StartView: View {
+    
+    @EnvironmentObject var settings: UserSettings
+    
+    var body: some View {
+                
+        if settings.loggedIn {
+            return AnyView(ContentView().environmentObject(settings))
+        } else {
+            return AnyView(LoginView().environmentObject(settings))
+        }
+    }
+}
+
+struct StartOnboardView: View {
+    
+    @EnvironmentObject var userOnboard: UserOnboard
+    
+    var body: some View {
+        
+        let contentView = StartView()
+        let settings = UserSettings()
+                
+        if userOnboard.onboardComplete {
+            return AnyView(contentView.environmentObject(settings))
+        } else {
+            if UserDefaults.standard.bool(forKey: "Loggedin") {
+                settings.loggedIn = true
+                return AnyView(ContentView().environmentObject(settings))
+            } else {
+                settings.loggedIn = false
+                return AnyView(OnboardingView().environmentObject(settings))
+            }
+        }
+    }
 }
 

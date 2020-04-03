@@ -21,9 +21,8 @@ struct OnboardingView: View {
     var captions =  ["Display movie poster 1", "Display movie poster 2", "Display movie poster 3"]
     
     @State var currentPageIndex = 0
-    @State private var showDetails = false
+    @EnvironmentObject var userOnboard: UserOnboard
     var body: some View {
-        NavigationView {
         VStack(alignment: .leading) {
             PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
                 .frame(height: 500)
@@ -40,11 +39,9 @@ struct OnboardingView: View {
             HStack {
                 PageControl(numberOfPages: subviews.count, currentPageIndex: $currentPageIndex)
                 Spacer()
-                NavigationLink(destination: ContentView(), isActive: self.$showDetails) {
-                        ButtonContent().onTapGesture {
-                            self.showDetails.toggle()// = true
-                        }
-                    }
+                ButtonContent().onTapGesture {
+                    self.userOnboard.onboardComplete = true
+                }
 //                Button(action: {
 //                    self.showDetails.toggle()
 ////                    if self.currentPageIndex+1 == self.subviews.count {
@@ -57,15 +54,7 @@ struct OnboardingView: View {
 //                }
             }
                 .padding()
-            }.navigationBarHidden(true)
-//            .edgesIgnoringSafeArea(.all)
-            .onAppear(perform: {
-//                self.showDetails = false
-            })
-            .onDisappear(perform: {
-//                self.showDetails = true                
-            })
-        }
+            }
     }
 }
 

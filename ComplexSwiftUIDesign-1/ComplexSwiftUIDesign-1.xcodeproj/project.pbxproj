@@ -20,6 +20,7 @@
 		B0B432922433594A00E18B5D /* Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B432912433594A00E18B5D /* Subview.swift */; };
 		B0B432942433597600E18B5D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B432932433597600E18B5D /* PageViewController.swift */; };
 		B0B432962433599700E18B5D /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B432952433599700E18B5D /* PageControl.swift */; };
+		B0C7C6052434760600454B38 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C6042434760600454B38 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B0B432912433594A00E18B5D /* Subview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
 		B0B432932433597600E18B5D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B0B432952433599700E18B5D /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		B0C7C6042434760600454B38 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				B0469948242DD28C007C06A7 /* HomeList.swift */,
 				B0A956422432245000CF5E0F /* Geners.swift */,
 				B0A1D78924330D0300839010 /* DetailView.swift */,
+				B0C7C6042434760600454B38 /* LoginView.swift */,
 				B0B432902433593B00E18B5D /* OnBoarding */,
 				B046993A242DCD66007C06A7 /* Assets.xcassets */,
 				B046993F242DCD66007C06A7 /* LaunchScreen.storyboard */,
@@ -183,6 +186,7 @@
 				B0469949242DD28C007C06A7 /* HomeList.swift in Sources */,
 				B0B432922433594A00E18B5D /* Subview.swift in Sources */,
 				B0B432942433597600E18B5D /* PageViewController.swift in Sources */,
+				B0C7C6052434760600454B38 /* LoginView.swift in Sources */,
 				B0469939242DCD63007C06A7 /* ContentView.swift in Sources */,
 				B0B4328F243358EF00E18B5D /* OnboardingView.swift in Sources */,
 			);
