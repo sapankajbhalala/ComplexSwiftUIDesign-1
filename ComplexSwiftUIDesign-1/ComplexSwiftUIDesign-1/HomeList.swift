@@ -13,7 +13,7 @@ struct HomeList: View {
    var courses = coursesData
    @State var showDetail = false
     @State var selectMovie = Movie()
-    
+    @EnvironmentObject var settings: UserSettings
    var body: some View {
       ScrollView {
          VStack {
@@ -42,8 +42,8 @@ struct HomeList: View {
                                       image: item.image,
                                       color: item.color,
                                       shadowColor: item.shadowColor)
-                              .rotation3DEffect(Angle(degrees:
-                                 Double(geometry.frame(in: .global).minX - 20) / -40), axis: (x: 0, y: 20.0, z: 0))
+//                              .rotation3DEffect(Angle(degrees:
+//                                 Double(geometry.frame(in: .global).minX - 20) / -40), axis: (x: 0, y: 20.0, z: 0))
                             .sheet(isPresented: self.$showDetail) { DetailView(show: true, item: self.selectMovie) }
                         }
                         .frame(width: 246, height: 360)
@@ -57,6 +57,14 @@ struct HomeList: View {
                Spacer()
             }
             GenersView()
+            .padding(.bottom, 40)
+            Button(action: {
+                UserDefaults.standard.set(false, forKey: "Loggedin")
+                UserDefaults.standard.synchronize()
+                self.settings.loggedIn = false
+            }) {
+                buttonWithBackground(btnText: "Logout",backgroundColor: .black)
+            }
          }
       }
    }

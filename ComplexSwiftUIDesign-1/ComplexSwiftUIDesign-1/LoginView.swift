@@ -80,6 +80,53 @@ struct LoginView: View {
                 
                 Spacer(minLength: (CScreenSizeBounds.width * 15) / 414)
                 
+                VStack(alignment: .trailing) {
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showForgotPassword = true
+                        }) {
+                            Text("Forgot Passowrd?")
+                                .foregroundColor(Color("TextColor"))
+                                .font(.system(size: (CScreenSizeBounds.width * 15) / 414, weight: .bold, design: .default))
+                            
+                        }.sheet(isPresented: self.$showForgotPassword) {
+                            ForgotPasswordView()
+                        }
+                        
+                    }.padding(.trailing, (CScreenSizeBounds.width * 10) / 414)
+                }
+                
+                
+                VStack {
+                    Spacer()
+                    Button(action: {
+                        if  self.isValidInputs() {
+                            UserDefaults.standard.set(true, forKey: "Loggedin")
+                            UserDefaults.standard.synchronize()
+                            self.settings.loggedIn = true
+                        }
+                    }) {
+                        buttonWithBackground(btnText: "Sign In")
+                    }
+                    Spacer()
+                }
+                
+                VStack {
+                    Button(action: {
+                        self.showSignup = true
+                    }) {
+                        Text("New User? Create an account")
+                            .foregroundColor(Color("TextColor"))
+                            .font(.system(size: (CScreenSizeBounds.width * 15) / 414, weight: .bold, design: .default))
+                        
+                    }.sheet(isPresented: self.$showSignup) {
+                        SignUpView().environmentObject(self.settings)
+                    }
+                    
+                    Spacer(minLength: (CScreenSizeBounds.width * 20) / 414)
+                }
             }
                 
             .alert(isPresented: $showAlert, content: { self.alert })
