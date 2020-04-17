@@ -15,6 +15,7 @@ struct HomeList: View {
     @State var selectMovie = Movie()
     @EnvironmentObject var settings: UserSettings
    var body: some View {
+    NavigationView {
       ScrollView {
          VStack {
             HStack {
@@ -58,6 +59,9 @@ struct HomeList: View {
             }
             GenersView()
             .padding(.bottom, 40)
+           NavigationLink(destination: AddressSearch()) {
+               Text("Do Something")
+           }.padding(.bottom, 40)
             Button(action: {
                 UserDefaults.standard.set(false, forKey: "Loggedin")
                 UserDefaults.standard.synchronize()
@@ -66,8 +70,9 @@ struct HomeList: View {
                 buttonWithBackground(btnText: "Logout",backgroundColor: .black)
             }
          }
-      }
+        }.navigationBarHidden(false)
    }
+}
 }
 
 #if DEBUG
