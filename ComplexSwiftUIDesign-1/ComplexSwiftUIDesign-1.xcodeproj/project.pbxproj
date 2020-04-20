@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -156,7 +156,6 @@
 				2295A968D803AD4FC463517D /* Pods-ComplexSwiftUIDesign-1.debug.xcconfig */,
 				50EF86A930BA235661F267AA /* Pods-ComplexSwiftUIDesign-1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

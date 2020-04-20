@@ -53,7 +53,11 @@ struct SignUpView: View {
                 VStack {
                     
                     Spacer(minLength: 20)
-                    
+                    Text("Signup")
+                    .font(.title)
+                    .padding()
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
                     HStack {
                         
                         Image("ic_user")

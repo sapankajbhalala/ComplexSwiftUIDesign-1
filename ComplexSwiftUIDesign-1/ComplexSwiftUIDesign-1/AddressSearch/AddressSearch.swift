@@ -21,6 +21,8 @@ struct AddressSearch: View {
     @State var typing = false
     @State var addressList: [Address] = []
     @State var selPlace: GMSPlace?
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         ZStack {
@@ -56,6 +58,8 @@ struct AddressSearch: View {
                                     self.getLocationFromplaceId(placeId: address.placeId)
                                 }) {
                                     Text("\(address.title)")
+                                }.alert(isPresented: self.$showingAlert) {
+                                    Alert(title: Text(""), message: Text(self.alertMessage), dismissButton: .default(Text("Ok")))
                                 }
                             }
                         }
@@ -76,6 +80,8 @@ struct AddressSearch: View {
         placesClient.autocompleteQuery(text_input, bounds: nil, filter: nil) { (results, error) -> Void in
             if let error = error {
                 print("Autocomplete error \(error)")
+                self.alertMessage = error.localizedDescription
+                self.showingAlert = true
                 return
             }
             self.addressList = []
@@ -95,13 +101,19 @@ struct AddressSearch: View {
         placesClient.lookUpPlaceID(placeId) { (place, error) in
             if let error = error {
                 print("An error occurred: \(error.localizedDescription)")
+                self.alertMessage = error.localizedDescription
+                self.showingAlert = true
                 return
             }
             if let place = place {
     //                    self.lblName?.text = place.name
                 print("Place: \(place)")
                 print("The selected place is: \(place.name)")
+                self.addressList = []
                 self.selPlace = place
+                self.checkpoints.append(Checkpoint(title: place.name, coordinate: place.coordinate))
+                self.address = ""
+                resignKeyboard()
             }
         }
     }

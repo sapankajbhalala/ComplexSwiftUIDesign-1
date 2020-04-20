@@ -31,7 +31,7 @@ struct ForgotPasswordView: View {
                     Spacer(minLength: 80)
                     
                     Text("Forgot Password")
-                        .font(.body)
+                        .font(.title)
                         .padding()
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.center)
