@@ -26,6 +26,9 @@
 		B0C7C6072434778400454B38 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C6062434778400454B38 /* ForgotPasswordView.swift */; };
 		B0C7C60B24347BA000454B38 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C60A24347BA000454B38 /* Support.swift */; };
 		B0C7C60D24347E4F00454B38 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C60C24347E4F00454B38 /* SignUpView.swift */; };
+		B0FCF634244D971400CC4664 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCF633244D971400CC4664 /* MapView.swift */; };
+		B0FCF637244D977600CC4664 /* MultiCoordinateMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCF636244D977600CC4664 /* MultiCoordinateMapView.swift */; };
+		B0FCF63A244DB3A500CC4664 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCF639244DB3A500CC4664 /* Address.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		B0C7C6062434778400454B38 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		B0C7C60A24347BA000454B38 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		B0C7C60C24347E4F00454B38 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		B0FCF633244D971400CC4664 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B0FCF636244D977600CC4664 /* MultiCoordinateMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCoordinateMapView.swift; sourceTree = "<group>"; };
+		B0FCF639244DB3A500CC4664 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		BEE06182852D8ECCD137EA83 /* Pods_ComplexSwiftUIDesign_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComplexSwiftUIDesign_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +132,9 @@
 		B0A5D667244974E300A2D31C /* AddressSearch */ = {
 			isa = PBXGroup;
 			children = (
+				B0FCF638244DB33E00CC4664 /* Model */,
+				B0FCF635244D974F00CC4664 /* MultiCoordinate */,
+				B0FCF632244D8F2E00CC4664 /* CurrentLocation */,
 				B0A5D6682449774D00A2D31C /* AddressSearch.swift */,
 			);
 			path = AddressSearch;
@@ -148,6 +157,30 @@
 				B0C7C60A24347BA000454B38 /* Support.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		B0FCF632244D8F2E00CC4664 /* CurrentLocation */ = {
+			isa = PBXGroup;
+			children = (
+				B0FCF633244D971400CC4664 /* MapView.swift */,
+			);
+			path = CurrentLocation;
+			sourceTree = "<group>";
+		};
+		B0FCF635244D974F00CC4664 /* MultiCoordinate */ = {
+			isa = PBXGroup;
+			children = (
+				B0FCF636244D977600CC4664 /* MultiCoordinateMapView.swift */,
+			);
+			path = MultiCoordinate;
+			sourceTree = "<group>";
+		};
+		B0FCF638244DB33E00CC4664 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0FCF639244DB3A500CC4664 /* Address.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E88AEE6EF7BEE7843A092847 /* Pods */ = {
@@ -274,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FCF63A244DB3A500CC4664 /* Address.swift in Sources */,
 				B0B432962433599700E18B5D /* PageControl.swift in Sources */,
+				B0FCF634244D971400CC4664 /* MapView.swift in Sources */,
 				B0469935242DCD63007C06A7 /* AppDelegate.swift in Sources */,
 				B0A1D78A24330D0300839010 /* DetailView.swift in Sources */,
 				B0A956432432245000CF5E0F /* Geners.swift in Sources */,
@@ -282,6 +317,7 @@
 				B0469949242DD28C007C06A7 /* HomeList.swift in Sources */,
 				B0B432922433594A00E18B5D /* Subview.swift in Sources */,
 				B0B432942433597600E18B5D /* PageViewController.swift in Sources */,
+				B0FCF637244D977600CC4664 /* MultiCoordinateMapView.swift in Sources */,
 				B0C7C6052434760600454B38 /* LoginView.swift in Sources */,
 				B0C7C60B24347BA000454B38 /* Support.swift in Sources */,
 				B0C7C60D24347E4F00454B38 /* SignUpView.swift in Sources */,

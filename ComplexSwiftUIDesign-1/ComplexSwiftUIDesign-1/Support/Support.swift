@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 let CScreenSizeBounds = UIScreen.main.bounds
 let CScreenWidth = CScreenSizeBounds.width
@@ -89,3 +90,24 @@ extension String {
         return false
     }
 }
+
+
+//===========================
+///Bound zoom map with multiple coordinates
+func getZoomRect(list: [MKAnnotation]) -> MKMapRect {
+    var zoomRect:MKMapRect = MKMapRect.null
+    for index in 0..<list.count {
+        let annotation = list[index]
+        let aPoint:MKMapPoint = MKMapPoint(annotation.coordinate)
+        let rect:MKMapRect = MKMapRect(x: aPoint.x, y: aPoint.y, width: 0.1, height: 0.1)
+
+        if zoomRect.isNull {
+            zoomRect = rect
+        } else {
+            zoomRect = zoomRect.union(rect)
+        }
+    }
+    return zoomRect
+}
+
+//==================
