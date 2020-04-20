@@ -60,7 +60,7 @@ struct HomeList: View {
             GenersView()
             .padding(.bottom, 40)
            NavigationLink(destination: AddressSearch()) {
-               Text("Do Something")
+               Text("Map View")
            }.padding(.bottom, 40)
             Button(action: {
                 UserDefaults.standard.set(false, forKey: "Loggedin")
