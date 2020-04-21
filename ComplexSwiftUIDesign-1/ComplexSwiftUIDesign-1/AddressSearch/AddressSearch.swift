@@ -134,7 +134,7 @@ struct AddressSearch: View {
                 self.addressList = []
                 self.address = ""
                 resignKeyboard()
-                self.checkpoints.append(AddressPoint(title: place.name, coordinate: place.coordinate))
+                self.checkpoints.append(AddressPoint(title: place.formattedAddress, coordinate: place.coordinate))
             }
         }
     }
