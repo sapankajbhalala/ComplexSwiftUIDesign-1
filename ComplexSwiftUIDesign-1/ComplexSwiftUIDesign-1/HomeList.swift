@@ -62,6 +62,9 @@ struct HomeList: View {
            NavigationLink(destination: AddressSearch()) {
                Text("Map View")
            }.padding(.bottom, 40)
+            NavigationLink(destination: GoogleMap()) {
+                Text("Google Map View")
+            }.padding(.bottom, 40)
             Button(action: {
                 UserDefaults.standard.set(false, forKey: "Loggedin")
                 UserDefaults.standard.synchronize()
@@ -69,7 +72,7 @@ struct HomeList: View {
             }) {
                 buttonWithBackground(btnText: "Logout",backgroundColor: .black)
             }
-         }
+         }.padding(.bottom, 60)
         }.navigationBarHidden(false)
    }
 }

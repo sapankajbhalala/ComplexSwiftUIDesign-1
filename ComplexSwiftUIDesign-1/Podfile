@@ -6,6 +6,7 @@ target 'ComplexSwiftUIDesign-1' do
   use_frameworks!
 
   # Pods for ComplexSwiftUIDesign-1
+  pod 'GoogleMaps'
 	pod 'GooglePlaces'
 
 end
