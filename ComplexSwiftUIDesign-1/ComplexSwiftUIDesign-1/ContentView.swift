@@ -28,7 +28,7 @@ struct ContentView: View {
              .animation(.default)
        }
        .background(Color("background"))
-       .edgesIgnoringSafeArea(.all)
+//       .edgesIgnoringSafeArea(.all)
     }
 }
 

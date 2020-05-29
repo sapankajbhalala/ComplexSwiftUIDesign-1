@@ -30,7 +30,7 @@ struct HomeList: View {
                Spacer()
             }
             .padding(.leading, 60.0)
-            .padding(.top, 60.0)
+//            .padding(.top, 60.0)
 
             ScrollView(.horizontal, showsIndicators: false) {
                HStack(spacing: 30.0) {
@@ -73,7 +73,7 @@ struct HomeList: View {
                 buttonWithBackground(btnText: "Logout",backgroundColor: .black)
             }
          }.padding(.bottom, 60)
-        }.navigationBarHidden(false)
+        }
    }
 }
 }
